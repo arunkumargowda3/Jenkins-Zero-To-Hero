@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+             stage("Workspace cleanup"){
+            steps{
+                script{
+                    cleanWs()
+                }
+            }
+        }
         stage ('git checkout') {
             steps {
                 echo "Git cloning ..........."
