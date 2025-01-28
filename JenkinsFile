@@ -1,0 +1,13 @@
+pipeline {
+    agent {'any'}
+
+    stages {
+        stage ('git checkout') {
+            steps {
+                echo "Git cloning ..........."
+                git branch: 'main', credentialsId: 'Github_token', url: 'https://github.com/arunkumargowda3/Jenkins-Zero-To-Hero.git'
+            }
+        }
+
+    }
+}
