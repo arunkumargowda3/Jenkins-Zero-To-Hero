@@ -8,6 +8,12 @@ pipeline {
                 git branch: 'main', credentialsId: 'Github_token', url: 'https://github.com/arunkumargowda3/Jenkins-Zero-To-Hero.git'
             }
         }
+        stage ('maven clean package') {
+            steps {
+                echo "maven package"
+                sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
+            }
+        }
 
     }
 }
